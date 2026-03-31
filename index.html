@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nocturne Logic</title>
+  <link rel="icon" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-content">
+      <nav aria-label="Main navigation">
+        <ul class="nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <img src="logo.png" alt="Nocturne Logic logo" class="hero-logo" />
+        <p class="subtitle">Software • Hardware • Automation • Security</p>
+        <a href="#contact" class="btn">Request Intelligence</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Strategic Engineering</h2>
+        <p>With over 20 years of veteran engineering experience, Nocturne Logic LLC specializes in pragmatic, minimalist, and high-security solutions. We bridge the gap between digital logic and physical hardware.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section border-top">
+      <div class="container">
+        <h2>Core Offerings</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>Custom Software</h3>
+            <p>Bespoke applications and automation scripts designed for longevity and performance.</p>
+          </div>
+          <div class="card">
+            <h3>Hardware Design</h3>
+            <p>From rapid prototyping to production-ready PCB routing and hardware integration.</p>
+          </div>
+          <div class="card">
+            <h3>Strategic Security</h3>
+            <p>Digital hardening and physical security consulting. Expertise in OpenClaw installation and defense.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="section">
+      <div class="container">
+        <div class="grid two">
+          <div class="detail-box">
+            <h3>Infrastructure Hardening</h3>
+            <ul>
+              <li>Systematic baseline audits</li>
+              <li>Network orchestration & isolation</li>
+              <li>Pragmatic risk mitigation</li>
+            </ul>
+          </div>
+          <div class="detail-box">
+            <h3>Automation Control</h3>
+            <ul>
+              <li>Industrial & Home automation</li>
+              <li>Bespoke control interfaces</li>
+              <li>Legacy system modernization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section border-top">
+      <div class="container">
+        <h2>Operator Feedback</h2>
+        <div class="testimonial-grid">
+          <blockquote class="blockquote">
+            "Nocturne Logic delivered a level of technical precision that is rare in the industry. Discreet and effective."
+            <cite>— Verified Operator</cite>
+          </blockquote>
+          <blockquote class="blockquote">
+            "The hardware integration was seamless. They understood our security requirements from day one."
+            <cite>— Lead Engineer, Defense Sector</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section border-top">
+      <div class="container">
+        <h2>Secure Contact</h2>
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return checkCaptcha()">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Identity</label>
+              <input type="text" id="name" name="name" placeholder="Name or Organization" required />
+            </div>
+            <div class="field">
+              <label for="email">Comms Channel</label>
+              <input type="email" id="email" name="email" placeholder="email@example.com" required />
+            </div>
+            <div class="field full-width">
+              <label for="message">Mission Parameters</label>
+              <textarea id="message" name="message" rows="5" placeholder="Details of your request..." required></textarea>
+            </div>
+            <div class="field captcha-field">
+              <label for="captcha">Logic Gate: What is 5 + 2?</label>
+              <input type="number" id="captcha" name="captcha" required />
+            </div>
+          </div>
+          <button type="submit" class="btn">Send Transmission</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>Nocturne Logic LLC &copy; 2026</p>
+        <div class="legal-text">
+          <p>CONFIDENTIALITY NOTICE: All services provided under strict NDA. Professional engineering services only. Non-disclosure of methodology is standard operating procedure.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function checkCaptcha() {
+      const val = document.getElementById('captcha').value;
+      if (parseInt(val, 10) !== 7) {
+        alert('Logic gate failed. Please verify the sum.');
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
