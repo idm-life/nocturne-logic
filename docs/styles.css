@@ -71,8 +71,7 @@ body {
 }
 
 .hero-logo {
-  height: 256px;
-  margin-bottom: 2rem;
+  height: 512px;
 }
 
 .subtitle {
@@ -266,7 +265,7 @@ cite {
     grid-column: span 1;
   }
   .hero-logo {
-    height: 180px;
+    height: 360px;
   }
 }
 
