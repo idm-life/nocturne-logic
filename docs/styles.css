@@ -6,7 +6,7 @@
   --card-bg-color: #1a1b26;
   --highlight-color: #5b21b6; /* deep gothic purple */
   --highlight-hover: #4c1d95;
-  --font-family: "IBM Plex Mono", "SF Mono", "Courier New", monospace;
+  --font-family: "Noto Sans Mono", "IBM Plex Mono", "SF Mono", "Courier New", monospace;
   --font-size-base: 1rem;
 }
 
