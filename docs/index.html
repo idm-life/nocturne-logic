@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header" role="banner">
@@ -19,6 +20,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="project-idea.html">Have an Idea?</a></li>
         </ul>
       </nav>
     </div>
@@ -42,41 +44,42 @@
 
     <section id="services" class="section border-top">
       <div class="container">
-        <h2>Core Offerings</h2>
-        <div class="grid three">
-          <div class="card">
-            <h3>Custom Software</h3>
-            <p>Bespoke applications and automation scripts designed for longevity and performance.</p>
-          </div>
-          <div class="card">
-            <h3>Hardware Design</h3>
-            <p>From rapid prototyping to production-ready PCB routing and hardware integration.</p>
-          </div>
-          <div class="card">
-            <h3>Strategic Security</h3>
-            <p>Digital hardening and physical security consulting. Expertise in OpenClaw installation and defense.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="details" class="section">
-      <div class="container">
+        <h2>Mission Capabilities</h2>
         <div class="grid two">
-          <div class="detail-box">
-            <h3>Infrastructure Hardening</h3>
+          <div class="card">
+            <h3>Digital Architecture & Cloud</h3>
+            <p>AWS specialist focused on "Scale-Zero" engineering—maximizing free-tier utility before production scaling.</p>
             <ul>
-              <li>Systematic baseline audits</li>
-              <li>Network orchestration & isolation</li>
-              <li>Pragmatic risk mitigation</li>
+              <li>Complex Auth/Authz & Identity Systems</li>
+              <li>Strategic Database Selection (SQL, NoSQL, Vector)</li>
+              <li>Platform Agnostic: Localhost, Web, Android, iOS</li>
             </ul>
           </div>
-          <div class="detail-box">
-            <h3>Automation Control</h3>
+          <div class="card">
+            <h3>Security & Intelligence</h3>
+            <p>Patent-holding expertise in threat intelligence and hardened offensive security.</p>
             <ul>
-              <li>Industrial & Home automation</li>
-              <li>Bespoke control interfaces</li>
-              <li>Legacy system modernization</li>
+              <li>Digital & Physical Penetration Testing</li>
+              <li>Infrastructure Hardening (OpenClaw / PicoClaw)</li>
+              <li>Threat Intel Feed Production & Analysis</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Tactical Automation & AI</h3>
+            <p>Domain expertise in cost-efficient AI integration and industrial-grade logic.</p>
+            <ul>
+              <li>Intelligent AI Routing & MCP Implementation</li>
+              <li>Home Defense Automation (Locks, Alarms, Sensors)</li>
+              <li>Custom Low-Complexity PCB Prototyping</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Strategic Direction</h3>
+            <p>Technical leadership and mentorship for complex engineering deployments.</p>
+            <ul>
+              <li>Technical Project Lead & Architecture Audits</li>
+              <li>AI Deployment Mentorship & Cost Optimization</li>
+              <li>Home/Office Network Infrastructure & Debugging</li>
             </ul>
           </div>
         </div>
@@ -102,7 +105,7 @@
     <section id="contact" class="section border-top">
       <div class="container">
         <h2>Secure Contact</h2>
-        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return checkCaptcha()">
+        <form id="contact-form" action="https://formspree.io/f/maqljkqd" method="POST" onsubmit="return checkFormSubmit(event)">
           <input type="hidden" name="form-name" value="contact" />
           <p class="hidden">
             <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
@@ -120,12 +123,9 @@
               <label for="message">Mission Parameters</label>
               <textarea id="message" name="message" rows="5" placeholder="Details of your request..." required></textarea>
             </div>
-            <div class="field captcha-field">
-              <label for="captcha">Logic Gate: What is 5 + 2?</label>
-              <input type="number" id="captcha" name="captcha" required />
-            </div>
           </div>
-          <button type="submit" class="btn">Send Transmission</button>
+          <p id="form-status" class="hidden"></p>
+          <button type="submit" id="submit-btn" class="btn">Send Transmission</button>
         </form>
       </div>
     </section>
@@ -143,13 +143,46 @@
   </footer>
 
   <script>
-    function checkCaptcha() {
-      const val = document.getElementById('captcha').value;
-      if (parseInt(val, 10) !== 7) {
-        alert('Logic gate failed. Please verify the sum.');
-        return false;
+    async function checkFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const status = document.getElementById("form-status");
+      const btn = document.getElementById("submit-btn");
+
+      const data = new FormData(form);
+      btn.disabled = true;
+      btn.innerText = "Transmitting...";
+      status.innerText = "Establishing link...";
+      status.classList.remove("hidden");
+      status.style.color = "#888";
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          status.innerText = "TRANSMISSION RECEIVED. WE WILL RESPOND SHORTLY.";
+          status.style.color = "#5b21b6";
+          form.reset();
+          btn.innerText = "Sent";
+        } else {
+          const result = await response.json();
+          status.innerText = result.errors ? result.errors.map(error => error.message).join(", ") : "Oops! There was a problem submitting your form";
+          status.style.color = "#ef4444";
+          btn.disabled = false;
+          btn.innerText = "Retry Transmission";
+        }
+      } catch (error) {
+        status.innerText = "Connection failed. Please try again later.";
+        status.style.color = "#ef4444";
+        btn.disabled = false;
+        btn.innerText = "Retry Transmission";
       }
-      return true;
     }
   </script>
 </body>

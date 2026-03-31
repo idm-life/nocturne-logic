@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nocturne Logic - Have a Project Idea?</title>
+  <link rel="icon" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-content">
+      <nav aria-label="Main navigation">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="project-idea.html">Have an Idea?</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <img src="../docs/logo.png" alt="Nocturne Logic logo" class="hero-logo" />
+        <p class="subtitle">Have a project idea? We’ll help you scope, design, and execute—from simple scripts to globally scaled architectures.</p>
+      </div>
+    </section>
+
+    <section class="section border-top">
+      <div class="container">
+        <h2>We solve problems of any size</h2>
+        <p>From a tiny file-rename utility to cloud-native, event-driven systems across Kubernetes clusters worldwide. No project is too small or too ambitious for a pragmatic, security-first partner.</p>
+      </div>
+    </section>
+
+    <section class="section border-top">
+      <div class="container">
+        <div class="grid three">
+          <div class="card">
+            <h3>Real-World Experience</h3>
+            <p>Hands-on engineering across software, hardware, and security domains with results you can trust.</p>
+          </div>
+          <div class="card">
+            <h3>Security in Mind</h3>
+            <p>Security by design is a core reflex, not an afterthought.</p>
+          </div>
+          <div class="card">
+            <h3>Minimalist, Scope-Aware</h3>
+            <p>We optimize for value and efficiency, delivering what matters without bloat.</p>
+          </div>
+        </div>
+        <div class="grid two" style="margin-top:2rem;">
+          <div class="card">
+            <h3>Patents & Trusted Partnerships</h3>
+            <p>Proven innovations and confidential collaborations that earn client trust.</p>
+          </div>
+          <div class="card">
+            <h3>Tech Leadership</h3>
+            <p>Mentorship, architecture leadership, and end-to-end project stewardship.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section border-top" id="ideas-form">
+      <div class="container">
+        <h2>Submit Your Idea</h2>
+        <p>Tell us about your goal, constraints, and desired outcomes. We’ll respond with a scoped plan and options.</p>
+        <form id="idea-form" action="https://formspree.io/f/maqljkqd" method="POST" onsubmit="return submitIdeaForm(event)">
+          <input type="hidden" name="form-name" value="idea-form" />
+          <div class="form-grid">
+            <div class="field">
+              <label for="iname">Your Name / Company</label>
+              <input id="iname" name="name" placeholder="Name or organization" required />
+            </div>
+            <div class="field">
+              <label for="iemail">Email</label>
+              <input id="iemail" name="email" type="email" placeholder="email@example.com" required />
+            </div>
+            <div class="field full-width" style="grid-column: span 2;">
+              <label for="iproject">Project Type</label>
+              <select id="iproject" name="project_type" required>
+                <option value="curiosity">Just Curious</option>
+                <option value="start">Let's Get Started</option>
+              </select>
+            </div>
+            <div class="field full-width" style="grid-column: span 2;">
+              <label for="idetails">Project Details</label>
+              <textarea id="idetails" name="message" rows="6" placeholder="Describe goals, constraints, and success criteria..." required></textarea>
+            </div>
+          </div>
+          <p id="form-status" class="hidden"></p>
+          <button type="submit" class="btn" id="idea-submit">Submit Idea</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>Nocturne Logic LLC &copy; 2026</p>
+        <p class="legal" style="font-size:.75rem; color:#666;">Confidentiality: NDA-compliant collaboration. We love solving problems.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    async function submitIdeaForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const status = document.getElementById('form-status');
+      const btn = document.getElementById('idea-submit');
+      const data = new FormData(form);
+      btn.disabled = true;
+      btn.innerText = 'Submitting...';
+      status.textContent = '';
+      status.classList.remove('hidden');
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {'Accept': 'application/json'}
+        });
+        if (response.ok) {
+          status.textContent = 'Thank you. Your idea has been received.';
+          status.style.color = '#5b21b6';
+          form.reset();
+          btn.innerText = 'Submitted';
+        } else {
+          const res = await response.json();
+          status.textContent = res.errors ? res.errors.map(e => e.message).join(', ') : 'Submission failed.';
+          status.style.color = '#ef4444';
+          btn.disabled = false;
+          btn.innerText = 'Submit Idea';
+        }
+      } catch (e) {
+        status.textContent = 'Network error. Please try again later.';
+        status.style.color = '#ef4444';
+        btn.disabled = false;
+        btn.innerText = 'Submit Idea';
+      }
+    }
+  </script>
+</body>
+</html>

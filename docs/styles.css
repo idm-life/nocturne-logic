@@ -6,7 +6,7 @@
   --card-bg-color: #1a1b26;
   --highlight-color: #5b21b6; /* deep gothic purple */
   --highlight-hover: #4c1d95;
-  --font-family: "IBM Plex Mono", "SF Mono", "Courier New", monospace;
+  --font-family: "Noto Sans Mono", "IBM Plex Mono", "SF Mono", "Courier New", monospace;
   --font-size-base: 1rem;
 }
 
@@ -126,7 +126,18 @@ h2 {
 }
 
 .grid.two {
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card ul {
+  padding-left: 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.card ul li {
+  margin-bottom: 0.5rem;
 }
 
 .card {
@@ -201,7 +212,7 @@ cite {
   color: #888;
 }
 
-.field input, .field textarea {
+.field input, .field select, .field textarea {
   padding: 1rem;
   background-color: #111;
   color: #fff;
@@ -209,7 +220,7 @@ cite {
   font-family: inherit;
 }
 
-.field input:focus, .field textarea:focus {
+.field input:focus, .field select:focus, .field textarea:focus {
   outline: 1px solid var(--highlight-color);
   border-color: var(--highlight-color);
 }
