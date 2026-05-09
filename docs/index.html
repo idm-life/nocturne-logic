@@ -1,44 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nocturne Logic - Custom Software, Hardware & Security Solutions</title>
   <link rel="icon" href="logo.png" />
-  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600&display=swap" rel="stylesheet">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Nocturne Logic LLC provides bespoke software development, hardware design, security consulting, and automation solutions. 20+ years of veteran engineering experience with a focus on minimalist, high-security implementations.">
-  <meta name="keywords" content="software development, hardware design, security consulting, automation, AWS, penetration testing, threat intelligence, custom software, PCB design">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: '#5b21b6',
+            'brand-hover': '#4c1d95',
+            surface: '#1a1b26',
+          },
+        },
+      },
+    }
+  </script>
+
+  <meta name="description" content="Nocturne Logic LLC provides software development, hardware design, security consulting, and automation solutions. 20+ years of engineering experience focused on practical, secure implementations.">
+  <meta name="keywords" content="software development, hardware design, security consulting, automation, AWS, custom software, small business technology">
   <meta name="author" content="Nocturne Logic LLC">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nocturnelogic.com/">
-  
-  <!-- Open Graph / Social Media -->
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nocturnelogic.com/">
   <meta property="og:title" content="Nocturne Logic - Custom Software, Hardware & Security Solutions">
-  <meta property="og:description" content="Bespoke software development, hardware design, security consulting, and automation solutions with 20+ years of veteran engineering experience.">
+  <meta property="og:description" content="Software development, hardware design, security consulting, and automation solutions with 20+ years of engineering experience.">
   <meta property="og:image" content="https://nocturnelogic.com/logo.png">
-  
-  <!-- Twitter -->
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://nocturnelogic.com/">
   <meta name="twitter:title" content="Nocturne Logic - Custom Software, Hardware & Security Solutions">
-  <meta name="twitter:description" content="Bespoke software development, hardware design, security consulting, and automation solutions.">
+  <meta name="twitter:description" content="Software development, hardware design, security consulting, and automation solutions.">
   <meta name="twitter:image" content="https://nocturnelogic.com/logo.png">
-  
-  <!-- Structured Data -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Nocturne Logic LLC",
-    "description": "Bespoke software development, hardware design, security consulting, and automation solutions",
+    "description": "Software development, hardware design, security consulting, and automation solutions",
     "url": "https://nocturnelogic.com/",
     "logo": "https://nocturnelogic.com/logo.png",
     "image": "https://nocturnelogic.com/logo.png",
@@ -107,171 +118,201 @@
     }
   }
   </script>
+
+  <style>
+    .product-offerings {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    .product-offerings li {
+      padding: 0.5rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      border-bottom: 1px solid #222;
+    }
+    .product-offerings li:last-child {
+      border-bottom: none;
+    }
+    .product-offerings li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: #5b21b6;
+      font-weight: 700;
+    }
+  </style>
 </head>
-<body>
-  <header class="site-header" role="banner">
-    <div class="container header-content">
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+
+  <header class="bg-black border-b-2 border-gray-800 py-4" role="banner">
+    <div class="max-w-5xl mx-auto px-4 flex justify-center">
       <nav aria-label="Main navigation">
-        <ul class="nav">
-          <li><a href="#products">Products</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="project-idea.html">Have an Idea?</a></li>
+        <ul class="flex gap-6 list-none m-0 p-0 flex-wrap justify-center">
+          <li><a href="#products" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Products</a></li>
+          <li><a href="#about" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">About</a></li>
+          <li><a href="#services" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Services</a></li>
+          <li><a href="#testimonials" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Testimonials</a></li>
+          <li><a href="#contact" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Contact</a></li>
+          <li><a href="project-idea.html" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Have an Idea?</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="hero" class="hero">
-      <div class="container">
-        <img src="logo.png" alt="Nocturne Logic logo" class="hero-logo" />
-        <p class="subtitle">Software • Hardware • Automation • Security</p>
-        <a href="#contact" class="btn">Request Intelligence</a>
+    <section id="hero" class="bg-black border-b border-gray-800 text-center py-24 px-4">
+      <div class="max-w-5xl mx-auto">
+        <img src="logo.png" alt="Nocturne Logic logo" class="mx-auto h-64 md:h-96 lg:h-[512px]" />
+        <p class="text-lg text-gray-400 tracking-widest mt-4">Software &bull; Hardware &bull; Automation &bull; Security</p>
+        <a href="#contact" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold uppercase py-3.5 px-8 mt-8 rounded-sm transition-colors">Get in Touch</a>
       </div>
     </section>
 
-    <section id="products" class="section border-top">
-      <div class="container">
-        <h2>Products</h2>
-        <div class="grid two">
-          <div class="card product-card product-featured">
-            <span class="product-badge">Available Now</span>
-            <h3>Nocturne Enterprise</h3>
-            <p>A modular cloud platform that pays for itself only when you use it. E-commerce, AI assistant, admin tools — all serverless, all included.</p>
-            <div class="scale-badges">
-              <span class="badge">Scale to Zero — Cost</span>
-              <span class="badge">Scale to Zero — Infra</span>
+    <section id="products" class="py-20 px-4 border-t border-gray-800">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-8">Products</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 flex flex-col hover:border-brand transition-colors">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest border border-brand text-brand px-3 py-1 mb-4 w-fit">Available Now</span>
+            <h3 class="text-brand uppercase text-lg font-bold mb-3">Nocturne Enterprise</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">A modular cloud platform that pays for itself only when you use it. E-commerce, AI assistant, admin tools — all serverless, all included.</p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span class="bg-brand text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5">Scale to Zero</span>
+              <span class="bg-gray-700 text-gray-200 text-xs font-bold uppercase tracking-wider px-4 py-1.5">Zero When Idle</span>
             </div>
-            <p class="stat">10,000 customers at $0 infra cost.</p>
-            <p class="product-detail">Multiple demo sites with various configurations — seasonal businesses, e-commerce storefronts, AI assistants backed by your own data. MCP server ready. Scales to zero when you do.</p>
-            <div class="product-ctas">
-              <a href="https://demo.nocturnelogic.com" class="btn">View Demo</a>
+            <p class="text-2xl font-bold text-white mb-2">10,000 customers at $0 infra cost.</p>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">Multiple demo sites with various configurations — seasonal businesses, e-commerce storefronts, AI assistants backed by your own data. MCP server ready. Scales to zero when you do.</p>
+            <div class="mt-auto pt-6">
+              <a href="https://demo.nocturnelogic.com" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold uppercase py-3.5 px-8 rounded-sm transition-colors">View Demo</a>
             </div>
           </div>
 
-          <div class="card product-card product-placeholder">
-            <span class="product-badge">Coming Soon</span>
-            <h3>AI &amp; Security Consulting</h3>
-            <p>Be AI-ready without the security debt. Custom agents, intelligent routing, and cost optimization — built by engineers who understand the threat landscape.</p>
-            <ul class="product-offerings">
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 flex flex-col hover:border-gray-500 transition-colors">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest border border-gray-600 text-gray-500 px-3 py-1 mb-4 w-fit">Coming Soon</span>
+            <h3 class="text-brand uppercase text-lg font-bold mb-3">AI &amp; Security Consulting</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">Be AI-ready without the security debt. Custom agents, intelligent routing, and cost optimization — built by engineers who understand the threat landscape.</p>
+            <ul class="product-offerings text-sm text-gray-400 my-4">
               <li>AI cost optimization through model selection &amp; routing</li>
               <li>Security audits for vibe-coded and AI-generated applications</li>
               <li>Custom security-focused agentic tool loops</li>
               <li>MCP server implementation &amp; deployment</li>
             </ul>
-            <div class="product-ctas">
-              <a href="#contact" class="btn">Get in Touch</a>
+            <div class="mt-auto pt-6">
+              <a href="#contact" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold uppercase py-3.5 px-8 rounded-sm transition-colors">Get in Touch</a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="container">
-        <h2>Strategic Engineering</h2>
-        <p>With over 20 years of veteran engineering experience, Nocturne Logic LLC specializes in pragmatic, minimalist, and high-security solutions. We bridge the gap between digital logic and physical hardware.</p>
+    <section id="about" class="py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-8">About Us</h2>
+        <p class="text-gray-300 leading-relaxed max-w-2xl">With over 20 years of engineering experience, Nocturne Logic LLC specializes in practical, secure, and efficient solutions. We build reliable software that grows with your business.</p>
       </div>
     </section>
 
-    <section id="services" class="section border-top">
-      <div class="container">
-        <h2>Mission Capabilities</h2>
-        <div class="grid two">
-          <div class="card">
-            <h3>Digital Architecture & Cloud</h3>
-            <p>AWS specialist focused on "Scale-Zero" engineering—maximizing free-tier utility before production scaling.</p>
-            <ul>
-              <li>Complex Auth/Authz & Identity Systems</li>
-              <li>Strategic Database Selection (SQL, NoSQL, Vector)</li>
-              <li>Platform Agnostic: Localhost, Web, Android, iOS</li>
+    <section id="services" class="py-20 px-4 border-t border-gray-800">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-8">What We Do</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">Cloud &amp; Web Development</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">Cost-optimized cloud solutions that grow with you.</p>
+            <ul class="mt-4 ml-5 text-sm text-gray-400 space-y-2 list-disc marker:text-brand">
+              <li>Login &amp; user management</li>
+              <li>Database design &amp; optimization</li>
+              <li>Web, mobile, and desktop apps</li>
             </ul>
           </div>
-          <div class="card">
-            <h3>Security & Intelligence</h3>
-            <p>Patent-holding expertise in threat intelligence and hardened offensive security.</p>
-            <ul>
-              <li>Digital & Physical Penetration Testing</li>
-              <li>Infrastructure Hardening (OpenClaw / PicoClaw)</li>
-              <li>Threat Intel Feed Production & Analysis</li>
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">Security &amp; Protection</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">20+ years keeping businesses safe from cyber threats.</p>
+            <ul class="mt-4 ml-5 text-sm text-gray-400 space-y-2 list-disc marker:text-brand">
+              <li>Security testing &amp; vulnerability assessments</li>
+              <li>System hardening &amp; protection</li>
+              <li>Threat monitoring &amp; analysis</li>
             </ul>
           </div>
-          <div class="card">
-            <h3>Tactical Automation & AI</h3>
-            <p>Domain expertise in cost-efficient AI integration and industrial-grade logic.</p>
-            <ul>
-              <li>Intelligent AI Routing & MCP Implementation</li>
-              <li>Home Defense Automation (Locks, Alarms, Sensors)</li>
-              <li>Custom Low-Complexity PCB Prototyping</li>
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">Automation &amp; AI</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">Practical AI that saves you time and money.</p>
+            <ul class="mt-4 ml-5 text-sm text-gray-400 space-y-2 list-disc marker:text-brand">
+              <li>Smart AI assistants &amp; automation</li>
+              <li>Smart home &amp; office automation</li>
+              <li>Custom hardware prototyping</li>
             </ul>
           </div>
-          <div class="card">
-            <h3>Strategic Direction</h3>
-            <p>Technical leadership and mentorship for complex engineering deployments.</p>
-            <ul>
-              <li>Technical Project Lead & Architecture Audits</li>
-              <li>AI Deployment Mentorship & Cost Optimization</li>
-              <li>Home/Office Network Infrastructure & Debugging</li>
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">Consulting &amp; Leadership</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">Hands-on guidance for your technology projects.</p>
+            <ul class="mt-4 ml-5 text-sm text-gray-400 space-y-2 list-disc marker:text-brand">
+              <li>Project leadership &amp; technical reviews</li>
+              <li>AI setup &amp; cost optimization</li>
+              <li>Home &amp; office network setup</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="section border-top">
-      <div class="container">
-        <h2>Operator Feedback</h2>
-        <div class="testimonial-grid">
-          <blockquote class="blockquote">
-            "Nocturne Logic delivered a level of technical precision that is rare in the industry. Discreet and effective."
-            <cite>— Verified Operator</cite>
+    <section id="testimonials" class="py-20 px-4 border-t border-gray-800">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-8">What Our Clients Say</h2>
+        <div class="space-y-10">
+          <blockquote class="border-l-4 border-brand pl-6 text-gray-400 italic">
+            "Nocturne Logic made our online store simple and secure. They explained everything in plain English and delivered exactly what we needed."
+            <cite class="block mt-2 not-italic font-bold text-brand">— Small Business Owner</cite>
           </blockquote>
-          <blockquote class="blockquote">
-            "The hardware integration was seamless. They understood our security requirements from day one."
-            <cite>— Lead Engineer, Defense Sector</cite>
+          <blockquote class="border-l-4 border-brand pl-6 text-gray-400 italic">
+            "We needed someone we could trust with our customer data. They set everything up and made sure we understood how it all works."
+            <cite class="block mt-2 not-italic font-bold text-brand">— Local Retail Shop, Tampa Bay</cite>
           </blockquote>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section border-top">
-      <div class="container">
-        <h2>Secure Contact</h2>
+    <section id="contact" class="py-20 px-4 border-t border-gray-800">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-8">Get in Touch</h2>
         <form id="contact-form" action="https://formspree.io/f/maqljkqd" method="POST" onsubmit="return checkFormSubmit(event)">
           <input type="hidden" name="form-name" value="contact" />
           <p class="hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
           </p>
-          <div class="form-grid">
-            <div class="field">
-              <label for="name">Identity</label>
-              <input type="text" id="name" name="name" placeholder="Name or Organization" required />
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex flex-col">
+              <label for="name" class="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Name</label>
+              <input type="text" id="name" name="name" placeholder="Name or Organization" required class="bg-gray-950 text-white border border-gray-700 px-4 py-3 font-sans focus:outline-none focus:border-brand" />
             </div>
-            <div class="field">
-              <label for="email">Comms Channel</label>
-              <input type="email" id="email" name="email" placeholder="email@example.com" required />
+            <div class="flex flex-col">
+              <label for="email" class="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Email</label>
+              <input type="email" id="email" name="email" placeholder="email@example.com" required class="bg-gray-950 text-white border border-gray-700 px-4 py-3 font-sans focus:outline-none focus:border-brand" />
             </div>
-            <div class="field full-width">
-              <label for="message">Mission Parameters</label>
-              <textarea id="message" name="message" rows="5" placeholder="Details of your request..." required></textarea>
+            <div class="flex flex-col md:col-span-2">
+              <label for="message" class="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Your Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required class="bg-gray-950 text-white border border-gray-700 px-4 py-3 font-sans focus:outline-none focus:border-brand"></textarea>
             </div>
           </div>
-          <p id="form-status" class="hidden"></p>
-          <button type="submit" id="submit-btn" class="btn">Send Transmission</button>
+          <p id="form-status" class="hidden mt-4"></p>
+          <button type="submit" id="submit-btn" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold uppercase py-3.5 px-8 mt-6 rounded-sm cursor-pointer transition-colors">Send Message</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>Nocturne Logic LLC &copy; 2026</p>
-        <p class="legal" style="font-size:.75rem; color:#666;">Confidentiality: NDA-compliant collaboration. We love solving problems.</p>
-      </div>
+  <footer class="bg-black border-t-2 border-gray-800 py-16 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="text-gray-100">Nocturne Logic LLC &copy; 2026</p>
+      <p class="text-xs text-gray-600 mt-4">We love solving problems.</p>
     </div>
   </footer>
 
@@ -284,8 +325,8 @@
 
       const data = new FormData(form);
       btn.disabled = true;
-      btn.innerText = "Transmitting...";
-      status.innerText = "Establishing link...";
+      btn.innerText = "Sending...";
+      status.innerText = "Sending...";
       status.classList.remove("hidden");
       status.style.color = "#888";
 
@@ -299,22 +340,22 @@
         });
 
         if (response.ok) {
-          status.innerText = "TRANSMISSION RECEIVED. WE WILL RESPOND SHORTLY.";
+          status.innerText = "Message sent! We'll be in touch soon.";
           status.style.color = "#5b21b6";
           form.reset();
           btn.innerText = "Sent";
         } else {
           const result = await response.json();
-          status.innerText = result.errors ? result.errors.map(error => error.message).join(", ") : "Oops! There was a problem submitting your form";
+          status.innerText = result.errors ? result.errors.map(error => error.message).join(", ") : "Oops! There was a problem submitting your form.";
           status.style.color = "#ef4444";
           btn.disabled = false;
-          btn.innerText = "Retry Transmission";
+          btn.innerText = "Try Again";
         }
       } catch (error) {
-        status.innerText = "Connection failed. Please try again later.";
+        status.innerText = "Something went wrong. Please try again later.";
         status.style.color = "#ef4444";
         btn.disabled = false;
-        btn.innerText = "Retry Transmission";
+        btn.innerText = "Try Again";
       }
     }
   </script>

@@ -1,41 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nocturne Logic - Have a Project Idea? Let's Build It Together</title>
   <link rel="icon" href="logo.png" />
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600&display=swap" rel="stylesheet">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Have a software, hardware, or security project idea? Nocturne Logic helps scope, design, and execute projects from simple utilities to complex cloud architectures.">
-  <meta name="keywords" content="project consultation, software development, hardware design, security project, automation ideas, AWS architecture, Kubernetes, cloud deployment">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: '#5b21b6',
+            'brand-hover': '#4c1d95',
+            surface: '#1a1b26',
+          },
+        },
+      },
+    }
+  </script>
+
+  <meta name="description" content="Have a software, hardware, or security project idea? Nocturne Logic helps scope, design, and execute projects from simple tools to full platforms.">
+  <meta name="keywords" content="project consultation, software development, hardware design, security project, automation ideas, AWS architecture, cloud deployment">
   <meta name="author" content="Nocturne Logic LLC">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nocturnelogic.com/project-idea.html">
-  
-  <!-- Open Graph / Social Media -->
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nocturnelogic.com/project-idea.html">
   <meta property="og:title" content="Nocturne Logic - Have a Project Idea? Let's Build It Together">
-  <meta property="og:description" content="From simple utilities to complex cloud architectures, we help scope, design, and execute your project ideas.">
+  <meta property="og:description" content="From a quick fix to a full platform, we help scope, design, and execute your project ideas.">
   <meta property="og:image" content="https://nocturnelogic.com/logo.png">
-  
-  <!-- Twitter -->
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://nocturnelogic.com/project-idea.html">
   <meta name="twitter:title" content="Nocturne Logic - Have a Project Idea? Let's Build It Together">
-  <meta name="twitter:description" content="From simple utilities to complex cloud architectures, we help scope, design, and execute your project ideas.">
+  <meta name="twitter:description" content="From a quick fix to a full platform, we help scope, design, and execute your project ideas.">
   <meta name="twitter:image" content="https://nocturnelogic.com/logo.png">
-  
-  <!-- Structured Data -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Have a Project Idea? Let's Build It Together",
-    "description": "Nocturne Logic helps scope, design, and execute software, hardware, and security projects from simple utilities to complex cloud architectures.",
+    "description": "Nocturne Logic helps scope, design, and execute software, hardware, and security projects from simple tools to full platforms.",
     "url": "https://nocturnelogic.com/project-idea.html",
     "mainEntity": {
       "@type": "Service",
@@ -50,105 +64,112 @@
   }
   </script>
 </head>
-<body>
-  <header class="site-header" role="banner">
-    <div class="container header-content">
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+
+  <header class="bg-black border-b-2 border-gray-800 py-4" role="banner">
+    <div class="max-w-5xl mx-auto px-4 flex justify-center">
       <nav aria-label="Main navigation">
-        <ul class="nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#testimonials">Testimonials</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+        <ul class="flex gap-6 list-none m-0 p-0 flex-wrap justify-center">
+          <li><a href="index.html" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Home</a></li>
+          <li><a href="index.html#about" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">About</a></li>
+          <li><a href="index.html#services" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Services</a></li>
+          <li><a href="index.html#testimonials" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Testimonials</a></li>
+          <li><a href="index.html#contact" class="text-gray-100 no-underline font-bold text-sm uppercase tracking-wide hover:text-brand">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="hero" class="hero">
-      <div class="container">
-        <img src="logo.png" alt="Nocturne Logic logo" class="hero-logo" />
-        <p class="subtitle">Have a project idea? We’ll help you scope, design, and execute—from simple scripts to globally scaled architectures.</p>
+    <section id="hero" class="bg-black border-b border-gray-800 text-center py-24 px-4">
+      <div class="max-w-5xl mx-auto">
+        <img src="logo.png" alt="Nocturne Logic logo" class="mx-auto h-64 md:h-96 lg:h-[512px]" />
+        <p class="text-lg text-gray-400 tracking-widest mt-4 max-w-2xl mx-auto">Have a project idea? We'll help you scope, design, and build — from a quick fix to a full platform.</p>
       </div>
     </section>
 
-    <section class="section border-top">
-      <div class="container">
-        <h2>We solve problems of any size</h2>
-        <p>From a tiny file-rename utility to cloud-native, event-driven systems across Kubernetes clusters worldwide. No project is too small or too ambitious for a pragmatic, security-first partner.</p>
+    <section class="py-20 px-4 border-t border-gray-800">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-8">Every Project Starts With a Conversation</h2>
+        <p class="text-gray-300 leading-relaxed max-w-2xl">Whether you need a simple tool or a complete platform, we're here to help. No project is too small, and no idea is too ambitious for a practical, security-first partner.</p>
       </div>
     </section>
 
-    <section class="section border-top">
-      <div class="container">
-        <div class="grid three">
-          <div class="card">
-            <h3>Real-World Experience</h3>
-            <p>Hands-on engineering across software, hardware, and security domains with results you can trust.</p>
+    <section class="py-20 px-4 border-t border-gray-800">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">Proven Experience</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">Hands-on engineering across software, hardware, and security — with results you can trust.</p>
           </div>
-          <div class="card">
-            <h3>Security in Mind</h3>
-            <p>Security by design is a core reflex, not an afterthought.</p>
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">Security First</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">Security by design is a core reflex, not an afterthought.</p>
           </div>
-          <div class="card">
-            <h3>Minimalist, Scope-Aware</h3>
-            <p>We optimize for value and efficiency, delivering what matters without bloat.</p>
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">No Bloat, Just Results</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">We optimize for value and efficiency, delivering what matters without the extras.</p>
           </div>
+
         </div>
-        <div class="grid two" style="margin-top:2rem;">
-          <div class="card">
-            <h3>Patents & Trusted Partnerships</h3>
-            <p>Proven innovations and confidential collaborations that earn client trust.</p>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">Trusted by Clients</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">Proven innovations and confidential collaborations that earn long-term trust.</p>
           </div>
-          <div class="card">
-            <h3>Tech Leadership</h3>
-            <p>Mentorship, architecture leadership, and end-to-end project stewardship.</p>
+
+          <div class="bg-surface border border-gray-700 rounded-sm p-8 hover:border-brand transition-colors">
+            <h3 class="text-brand uppercase text-sm font-bold mb-3">Hands-On Guidance</h3>
+            <p class="text-gray-300 text-sm leading-relaxed">Mentorship, architecture leadership, and end-to-end project stewardship.</p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section border-top" id="ideas-form">
-      <div class="container">
-        <h2>Submit Your Idea</h2>
-        <p>Tell us about your goal, constraints, and desired outcomes. We’ll respond with a scoped plan and options.</p>
+    <section class="py-20 px-4 border-t border-gray-800">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-4">Tell Us About Your Project</h2>
+        <p class="text-gray-400 text-sm mb-8">Tell us what you're trying to build or what problems you're running into. We'll get back to you with ideas and next steps.</p>
         <form id="idea-form" action="https://formspree.io/f/maqljkqd" method="POST" onsubmit="return submitIdeaForm(event)">
           <input type="hidden" name="form-name" value="idea-form" />
-          <div class="form-grid">
-            <div class="field">
-              <label for="iname">Your Name / Company</label>
-              <input id="iname" name="name" placeholder="Name or organization" required />
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex flex-col">
+              <label for="iname" class="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Name</label>
+              <input id="iname" name="name" placeholder="Name or Organization" required class="bg-gray-950 text-white border border-gray-700 px-4 py-3 font-sans focus:outline-none focus:border-brand" />
             </div>
-            <div class="field">
-              <label for="iemail">Email</label>
-              <input id="iemail" name="email" type="email" placeholder="email@example.com" required />
+            <div class="flex flex-col">
+              <label for="iemail" class="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Email</label>
+              <input id="iemail" name="email" type="email" placeholder="email@example.com" required class="bg-gray-950 text-white border border-gray-700 px-4 py-3 font-sans focus:outline-none focus:border-brand" />
             </div>
-            <div class="field full-width" style="grid-column: span 2;">
-              <label for="iproject">Project Type</label>
-              <select id="iproject" name="project_type" required>
-                <option value="curiosity">Just Curious</option>
-                <option value="start">Let's Get Started</option>
+            <div class="flex flex-col md:col-span-2">
+              <label for="iproject" class="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Project Type</label>
+              <select id="iproject" name="project_type" required class="bg-gray-950 text-white border border-gray-700 px-4 py-3 font-sans focus:outline-none focus:border-brand">
+                <option value="exploring">Just Exploring</option>
+                <option value="start">Ready to Build</option>
               </select>
             </div>
-            <div class="field full-width" style="grid-column: span 2;">
-              <label for="idetails">Project Details</label>
-              <textarea id="idetails" name="message" rows="6" placeholder="Describe goals, constraints, and success criteria..." required></textarea>
+            <div class="flex flex-col md:col-span-2">
+              <label for="idetails" class="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Your Project</label>
+              <textarea id="idetails" name="message" rows="6" placeholder="What are you trying to build? What problems are you running into?" required class="bg-gray-950 text-white border border-gray-700 px-4 py-3 font-sans focus:outline-none focus:border-brand"></textarea>
             </div>
           </div>
-          <p id="form-status" class="hidden"></p>
-          <button type="submit" class="btn" id="idea-submit">Submit Idea</button>
+          <p id="form-status" class="hidden mt-4"></p>
+          <button type="submit" id="idea-submit" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold uppercase py-3.5 px-8 mt-6 rounded-sm cursor-pointer transition-colors">Submit</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>Nocturne Logic LLC &copy; 2026</p>
-        <p class="legal" style="font-size:.75rem; color:#666;">Confidentiality: NDA-compliant collaboration. We love solving problems.</p>
-      </div>
+  <footer class="bg-black border-t-2 border-gray-800 py-16 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="text-gray-100">Nocturne Logic LLC &copy; 2026</p>
+      <p class="text-xs text-gray-600 mt-4">We love solving problems.</p>
     </div>
   </footer>
 
@@ -160,9 +181,10 @@
       const btn = document.getElementById('idea-submit');
       const data = new FormData(form);
       btn.disabled = true;
-      btn.innerText = 'Submitting...';
-      status.textContent = '';
+      btn.innerText = 'Sending...';
+      status.textContent = 'Sending...';
       status.classList.remove('hidden');
+      status.style.color = '#888';
       try {
         const response = await fetch(form.action, {
           method: form.method,
@@ -170,22 +192,22 @@
           headers: {'Accept': 'application/json'}
         });
         if (response.ok) {
-          status.textContent = 'Thank you. Your idea has been received.';
+          status.textContent = "Thanks! We'll be in touch.";
           status.style.color = '#5b21b6';
           form.reset();
-          btn.innerText = 'Submitted';
+          btn.innerText = 'Sent';
         } else {
           const res = await response.json();
-          status.textContent = res.errors ? res.errors.map(e => e.message).join(', ') : 'Submission failed.';
+          status.textContent = res.errors ? res.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
           status.style.color = '#ef4444';
           btn.disabled = false;
-          btn.innerText = 'Submit Idea';
+          btn.innerText = 'Try Again';
         }
       } catch (e) {
-        status.textContent = 'Network error. Please try again later.';
+        status.textContent = 'Something went wrong. Please try again later.';
         status.style.color = '#ef4444';
         btn.disabled = false;
-        btn.innerText = 'Submit Idea';
+        btn.innerText = 'Try Again';
       }
     }
   </script>
